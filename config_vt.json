@@ -7,7 +7,7 @@
     },
 
     "train": {
-        "train_image_folder":   "/data/tungpham/BBox-Label-Tool/Images/",
+        "train_image_folder":   "/data/tungpham/BBox-Label-Tool/Images/001/",
         "train_annot_folder":   "/data/tungpham/BBox-Label-Tool/Labels/001_new/",
         "train_file":   "/data/tungpham/BBox-Label-Tool/Labels/001_train.txt",
         "cache_name":           "kangaroo_train.pkl",
