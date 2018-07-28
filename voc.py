@@ -3,7 +3,7 @@ import os
 import xml.etree.ElementTree as ET
 import pickle
 
-def parse_voc_annotation(ann_dir, img_dir, cache_name, labels=[]):
+def parse_voc_annotation(ann_dir, img_dir,file_data, cache_name, labels=[]):
     if os.path.exists(cache_name):
         with open(cache_name, 'rb') as handle:
             cache = pickle.load(handle)
@@ -11,8 +11,15 @@ def parse_voc_annotation(ann_dir, img_dir, cache_name, labels=[]):
     else:
         all_insts = []
         seen_labels = {}
+
+        all_ann_files = []
+
+        with open(file_data) as handler:
+            all_ann_files = handler.readlines()
+
+        all_ann_files = [x.strip() for x in all_ann_files] 
         
-        for ann in sorted(os.listdir(ann_dir)):
+        for ann in sorted(all_ann_files):
             img = {'object':[]}
 
             try:
