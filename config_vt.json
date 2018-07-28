@@ -26,7 +26,7 @@
         "xywh_scale":           1,
         "class_scale":          1,
 
-        "tensorboard_dir":      "logs",
+        "tensorboard_dir":      "/data/tungpham/logs",
         "saved_weights_name":   "kangaroo.h5",
         "debug":                true
     },
