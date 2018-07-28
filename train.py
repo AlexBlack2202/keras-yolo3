@@ -181,7 +181,7 @@ def _main_(args):
         config['train']['cache_name'],
         config['valid']['valid_annot_folder'],
         config['valid']['valid_image_folder'],
-        config['train']['valid_file'],
+        config['valid']['valid_file'],
         config['valid']['cache_name'],
         config['model']['labels']
     )
