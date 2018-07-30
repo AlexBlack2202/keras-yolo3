@@ -120,7 +120,9 @@ def _main_(args):
             draw_boxes(image, boxes, config['model']['labels'], obj_thresh) 
      
             # write the image with bounding boxes to file
-            cv2.imwrite(output_path + image_path.split('/')[-1], np.uint8(image))         
+            save_path=output_path + image_path.split('/')[-1]
+            print(save_path)
+            cv2.imwrite(save_path, np.uint8(image))         
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser(description='Predict with a trained yolo model')
