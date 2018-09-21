@@ -17,12 +17,12 @@ def parse_voc_annotation(ann_dir, img_dir, cache_name, labels=[]):
         all_ann_files = []
 
 
-        all_ann_files = [f for f in listdir(ann_dir) if isfile(join(mypath, f))]
+        all_ann_files = [f for f in listdir(ann_dir) if isfile(join(ann_dir, f))]
 
         # with open(file_data) as handler:
         #     all_ann_files = handler.readlines()
 
-        print("Total file "+ len(all_ann_files))
+        print("Total file "+ str(len(all_ann_files)))
 
         all_ann_files = [x.strip() for x in all_ann_files] 
         
