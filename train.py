@@ -19,7 +19,6 @@ from keras.models import load_model
 def create_training_instances(
     train_annot_folder,
     train_image_folder,
-    train_file,
     train_cache,
     valid_annot_folder,
     valid_image_folder,
@@ -28,7 +27,7 @@ def create_training_instances(
     labels,
 ):
     # parse annotations of the training set
-    train_ints, train_labels = parse_voc_annotation(train_annot_folder, train_image_folder,train_file, train_cache, labels)
+    train_ints, train_labels = parse_voc_annotation(train_annot_folder, train_image_folder, train_cache, labels)
 
     # parse annotations of the validation set, if any, otherwise split the training set
     if  len(valid_file)>3:
@@ -177,7 +176,6 @@ def _main_(args):
     train_ints, valid_ints, labels, max_box_per_image = create_training_instances(
         config['train']['train_annot_folder'],
         config['train']['train_image_folder'],
-        config['train']['train_file'],
         config['train']['cache_name'],
         config['valid']['valid_annot_folder'],
         config['valid']['valid_image_folder'],

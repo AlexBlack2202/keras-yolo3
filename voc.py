@@ -2,8 +2,10 @@ import numpy as np
 import os
 import xml.etree.ElementTree as ET
 import pickle
+from os import listdir
+from os.path import isfile, join
 
-def parse_voc_annotation(ann_dir, img_dir,file_data, cache_name, labels=[]):
+def parse_voc_annotation(ann_dir, img_dir, cache_name, labels=[]):
     if os.path.exists(cache_name) and len(cache_name)>2:
         with open(cache_name, 'rb') as handle:
             cache = pickle.load(handle)
@@ -14,8 +16,13 @@ def parse_voc_annotation(ann_dir, img_dir,file_data, cache_name, labels=[]):
 
         all_ann_files = []
 
-        with open(file_data) as handler:
-            all_ann_files = handler.readlines()
+
+        all_ann_files = [f for f in listdir(ann_dir) if isfile(join(mypath, f))]
+
+        # with open(file_data) as handler:
+        #     all_ann_files = handler.readlines()
+
+        print("Total file "+ len(all_ann_files))
 
         all_ann_files = [x.strip() for x in all_ann_files] 
         
