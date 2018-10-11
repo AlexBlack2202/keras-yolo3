@@ -85,7 +85,7 @@ The ```labels``` setting lists the labels to be trained on. Only images, which h
 
 Download pretrained weights for backend at:
 
-https://1drv.ms/u/s!ApLdDEW3ut5fgQXa7GzSlG-mdza6
+https://drive.google.com/open?id=1L2v9yjnZLVKFguE95ZJh-FML5FcxeLzs
 
 **This weights must be put in the root folder of the repository. They are the pretrained weights for the backend only and will be loaded during model creation. The code does not work without this weights.**
 
